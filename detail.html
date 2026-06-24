@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Drama | K-DramaKu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-container {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+        .detail-image {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .detail-image img {
+            width: 100%;
+            display: block;
+        }
+        .detail-info {
+            flex: 2;
+        }
+        .detail-info h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .meta-tags {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .meta-tags span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        .meta-tags span.rating {
+            background: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        .synopsis {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .cast-list {
+            margin-bottom: 2rem;
+        }
+        .cast-list h3 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .cast-list p {
+            color: var(--text-muted);
+        }
+        .detail-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        @media (max-width: 768px) {
+            .detail-container {
+                flex-direction: column;
+            }
+            .detail-info h1 {
+                font-size: 2.2rem;
+            }
+        }
+        .back-btn {
+            display: inline-flex;
+            margin-bottom: 2rem;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">K-Drama<span>Ku</span></a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="rekomendasi.html">Mingguan</a></li>
+                <li><a href="toprated.html">Top Rated</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <a href="javascript:history.back()" class="btn btn-secondary back-btn">← Kembali</a>
+        
+        <div class="detail-container">
+            <div class="detail-image">
+                <img id="detail-img" src="assets/images/romcom.png" alt="Poster Film">
+            </div>
+            
+            <div class="detail-info">
+                <h1 id="detail-title">Sweet & Sour Romance</h1>
+                <div class="meta-tags">
+                    <span class="rating" id="detail-rating">⭐ 9.2</span>
+                    <span id="detail-episode">16 Episode</span>
+                    <span id="detail-genre">Romantis Komedi</span>
+                </div>
+                
+                <p class="synopsis" id="detail-synopsis">
+                    Kisah dua sahabat yang terjebak dalam cinta segitiga rumit namun menggemaskan.
+                </p>
+                
+                <div class="cast-list">
+                    <h3>Pemeran Utama:</h3>
+                    <p id="detail-cast">Kim Seon-ho, Han So-hee, Lee Do-hyun</p>
+                </div>
+
+                <div class="detail-buttons">
+                    <button class="btn btn-primary" onclick="alert('Ini hanya simulasi, videonya tidak ada 😊')">▶ Tonton Trailer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 K-DramaKu. Tugas Web HTML & CSS.</p>
+    </footer>
+
+    <!-- Javascript untuk merubah isi detail sesuai film yang diklik -->
+    <script>
+        const films = {
+            'romcom': {
+                title: 'Sweet & Sour Romance', img: 'assets/images/romcom.png',
+                rating: '⭐ 9.2', genre: 'Romantis Komedi',
+                synopsis: 'Menceritakan kisah dua sahabat masa kecil yang kini bekerja di sebuah agensi kreatif yang sama. Ketika sebuah proyek besar memaksa mereka untuk bekerja lembur berdua selama sebulan penuh, batas antara persahabatan dan cinta perlahan memudar.',
+                cast: 'Kim Seon-ho, Han So-hee, Lee Do-hyun'
+            },
+            'thriller': {
+                title: 'Shadows of Seoul', img: 'assets/images/thriller.png',
+                rating: '⭐ 9.0', genre: 'Thriller / Misteri',
+                synopsis: 'Seorang detektif jenius dengan masa lalu kelam harus memecahkan kasus pembunuhan berantai misterius yang terjadi di sudut gelap kota Seoul sebelum waktu habis.',
+                cast: 'Lee Joon-gi, Moon Chae-won'
+            },
+            'historical': {
+                title: 'The Crown\'s Secret', img: 'assets/images/historical.png',
+                rating: '⭐ 8.9', genre: 'Kolosal / Sejarah',
+                synopsis: 'Perebutan tahta dan intrik politik di era Joseon, berpusat pada seorang pangeran yang menyembunyikan identitas aslinya dan jatuh cinta pada putri dari musuh politik keluarganya.',
+                cast: 'Park Bo-gum, Kim Yoo-jung'
+            },
+            'scifi': {
+                title: 'Neon City', img: 'assets/images/scifi.png',
+                rating: '⭐ 8.8', genre: 'Sci-Fi / Aksi',
+                synopsis: 'Berlatar di tahun 2099, sebuah kelompok pemberontak mencoba menggulingkan perusahaan teknologi raksasa yang mengendalikan seluruh sistem kehidupan manusia lewat chip.',
+                cast: 'Gong Yoo, Bae Doona'
+            },
+            'sliceoflife': {
+                title: 'Seaside Village', img: 'assets/images/sliceoflife.png',
+                rating: '⭐ 9.4', genre: 'Slice of Life / Healing',
+                synopsis: 'Kisah menghangatkan hati tentang seorang dokter gigi sukses dari kota yang terpaksa pindah ke sebuah desa nelayan terpencil dan menemukan makna hidup yang sebenarnya dari para warga.',
+                cast: 'Shin Min-a, Kim Seon-ho'
+            },
+            'melo': {
+                title: 'Tears of the Rain', img: 'assets/images/hero.png',
+                rating: '⭐ 9.1', genre: 'Melodrama',
+                synopsis: 'Kisah melodrama epik tentang sepasang kekasih yang terpisahkan oleh takdir dan perang, mencoba menemukan jalan kembali satu sama lain melintasi waktu bertahun-tahun.',
+                cast: 'Song Hye-kyo, Song Joong-ki'
+            },
+            'loveinrain': {
+                title: 'Love in the Rain', img: 'assets/images/hero.png',
+                rating: '⭐ 9.8', genre: 'Romantis / Melodrama',
+                synopsis: 'Dua orang asing yang selalu bertemu secara tak sengaja setiap kali hujan turun di kota Seoul. Perlahan, kebetulan itu berubah menjadi takdir yang mengikat hati mereka berdua.',
+                cast: 'Nam Joo-hyuk, Bae Suzy'
+            },
+            'crownprince': {
+                title: 'The Crown Prince', img: 'assets/images/historical.png',
+                rating: '⭐ 9.5', genre: 'Kolosal / Sejarah',
+                synopsis: 'Seorang pangeran mahkota yang menyamar menjadi rakyat jelata untuk mencari kebenaran di balik kematian ayahnya, dan malah menemukan cinta sejatinya di luar tembok istana.',
+                cast: 'Park Bo-gum, Kim Yoo-jung'
+            },
+            'summerjeju': {
+                title: 'Summer in Jeju', img: 'assets/images/sliceoflife.png',
+                rating: '⭐ 9.3', genre: 'Slice of Life / Healing',
+                synopsis: 'Seorang wanita karier yang kelelahan dengan kehidupannya di kota memutuskan untuk pindah sementara ke pulau Jeju, di mana ia bertemu penduduk lokal yang hangat.',
+                cast: 'Shin Min-a, Kim Seon-ho'
+            },
+            'sweetenemy': {
+                title: 'My Sweet Enemy', img: 'assets/images/romcom.png',
+                rating: '⭐ 9.1', genre: 'Romantis Komedi',
+                synopsis: 'Kisah benci jadi cinta antara dua rival pengacara yang terpaksa harus bekerja sama dalam menangani satu kasus besar yang mempertaruhkan karir mereka.',
+                cast: 'Park Seo-joon, Park Min-young'
+            },
+            'reply1988': {
+                title: 'Reply 1988', img: 'assets/images/reply1988.jpg',
+                rating: '⭐ 9.8', genre: 'Keluarga / Romantis',
+                synopsis: 'Menyoroti persahabatan lima remaja dan keluarga mereka yang tinggal di satu lingkungan yang sama (Ssangmundong) pada tahun 1988. Drama slice-of-life yang penuh dengan tawa, tangis, dan kehangatan keluarga.',
+                cast: 'Lee Hye-ri, Park Bo-gum, Ryu Jun-yeol, Go Kyung-pyo, Lee Dong-hwi'
+            },
+            'cloy': {
+                title: 'Crash Landing on You', img: 'assets/images/cloy.jpg',
+                rating: '⭐ 9.5', genre: 'Romantis / Drama',
+                synopsis: 'Seorang pewaris kaya dari Korea Selatan mengalami kecelakaan paralayang dan mendarat darurat di Korea Utara. Ia lalu ditemukan dan dilindungi oleh seorang perwira tentara tampan yang dingin namun hangat hatinya.',
+                cast: 'Hyun Bin, Son Ye-jin, Seo Ji-hye, Kim Jung-hyun'
+            },
+            'goblin': {
+                title: 'Goblin', img: 'assets/images/goblin.jpg',
+                rating: '⭐ 9.3', genre: 'Fantasi / Romantis',
+                synopsis: 'Seorang jenderal militer dari dinasti Goryeo yang dikutuk menjadi Goblin abadi mencari "pengantin manusia"-nya — satu-satunya yang bisa mencabut pedang di dadanya dan mengakhiri hidupnya yang panjang.',
+                cast: 'Gong Yoo, Kim Go-eun, Lee Dong-wook, Yoo In-na'
+            },
+            'hospital': {
+                title: 'Hospital Playlist', img: 'assets/images/hospital.jpg',
+                rating: '⭐ 9.1', genre: 'Medis / Slice of Life',
+                synopsis: 'Lima dokter spesialis di rumah sakit bergengsi yang sudah bersahabat sejak kuliah. Di tengah kesibukan menyelamatkan nyawa pasien, mereka selalu menyempatkan latihan band setiap minggu.',
+                cast: 'Jo Jung-suk, Yoo Yeon-seok, Jung Kyung-ho, Jeon Mi-do, Kim Dae-myung'
+            }
+        };
+
+        // Ambil ID dari URL Hash (contoh: detail.html#thriller)
+        const id = window.location.hash.substring(1);
+
+        if(id && films[id]) {
+            const film = films[id];
+            // Ubah konten di halaman sesuai data film
+            document.getElementById('detail-title').innerText = film.title;
+            document.getElementById('detail-img').src = film.img;
+            document.getElementById('detail-rating').innerText = film.rating;
+            document.getElementById('detail-genre').innerText = film.genre;
+            document.getElementById('detail-synopsis').innerText = film.synopsis;
+            document.getElementById('detail-cast').innerText = film.cast;
+            document.title = film.title + " | K-DramaKu";
+        }
+    </script>
+</body>
+</html>

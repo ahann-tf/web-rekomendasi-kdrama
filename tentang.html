@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | K-DramaKu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- About Page Specific Styles --- */
+        .about-hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        .about-hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 102, 0.3);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+        .stat-label {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Team Section */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        .team-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 102, 0.3);
+        }
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, rgba(255,51,102,0.2), rgba(255,51,102,0.05));
+            border: 2px solid rgba(255,51,102,0.3);
+        }
+        .team-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .team-card p {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Contact / Sosial Section */
+        .contact-box {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 51, 102, 0.05) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact-box h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.05);
+            color: var(--text-color);
+        }
+        .social-btn:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,51,102,0.4);
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .stats-row { grid-template-columns: 1fr; }
+            .about-hero h1 { font-size: 2.2rem; }
+            .contact-box { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">K-Drama<span>Ku</span></a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="rekomendasi.html">Mingguan</a></li>
+                <li><a href="toprated.html">Top Rated</a></li>
+                <li><a href="tentang.html" class="active">Tentang Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-container">
+
+        <!-- Hero About -->
+        <div class="about-hero">
+            <h1>Tentang K-DramaKu 🎬</h1>
+            <p>Kami adalah sekelompok pecinta K-Drama yang ingin berbagi keseruan menonton drama Korea. Dari yang genre romance sampai thriller gelap, kami kurasi yang terbaik buat kamu setiap minggunya — gratis, selamanya!</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <span class="stat-number">200+</span>
+                <p class="stat-label">Drama Diulas</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">10K+</span>
+                <p class="stat-label">Pengunjung Aktif</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">52x</span>
+                <p class="stat-label">Update per Tahun</p>
+            </div>
+        </div>
+
+        
+        <!-- Contact / Social -->
+        <div class="contact-box">
+            <h2>Hubungi Kami 💬</h2>
+            <p>Punya rekomendasi drama yang keren? Atau sekadar mau ngobrol soal K-Drama? Yuk temukan kami di sini!</p>
+            <div class="social-links">
+                <a href="#" class="social-btn">📸 Instagram</a>
+                <a href="#" class="social-btn">🐦 Twitter / X</a>
+                <a href="#" class="social-btn">✉️ Email Kami</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">K-Drama<span>Ku</span></div>
+            <p class="footer-tagline">Temukan drama favoritmu dan nikmati setiap ceritanya. ✨</p>
+            <p class="footer-copy">K-DramaKu &nbsp;|&nbsp; Update setiap Senin</p>
+        </div>
+    </footer>
+
+</body>
+</html>
